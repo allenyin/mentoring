@@ -2,7 +2,7 @@ import urllib
 import os
 openner = urllib.URLopener()
 f = open('imagenet.synset.geturls.txt')
-nImages = 10
+nImages = 100
 
 for i in range(nImages):
     imgURL = f.readline()[0:-2]
@@ -11,5 +11,5 @@ for i in range(nImages):
     try:
         openner.retrieve(imgURL, imgName)
     except IOError:
-        print "Picture not found, skipping.."
+        print "Picture not found, skipping ", i
 
